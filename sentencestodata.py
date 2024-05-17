@@ -1,7 +1,7 @@
 import tensorflow as ts
 from tensorflow import keras
 from tensorflow.keras.preprocessing.text import Tokenizer
-
+from tensorflow.keras.preprocessing.sequence import pad_sequences
 sentences = [
     'I love my dog',
     'I love my cat',
@@ -15,5 +15,8 @@ word_index  = tokenizer.word_index
 
 sequences = tokenizer.texts_to_sequences(sentences)
 
+padded = pad_sequences(sequences)
+
 print(word_index)
 print(sequences)
+print(padded)
